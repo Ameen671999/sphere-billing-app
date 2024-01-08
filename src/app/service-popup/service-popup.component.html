@@ -1,0 +1,43 @@
+<h2 mat-dialog-title>Enter Service Details</h2>
+<mat-dialog-content class="mat-typography">
+    <form [formGroup]="serviceForm">
+
+        <!-- Service type -->
+        <mat-form-field>
+            <mat-label>Service Type</mat-label>
+            <mat-select matNativeControl formControlName="serviceType" required>
+                <mat-option value="Audiology">Audiology</mat-option>
+                <mat-option value="ENT">ENT</mat-option>
+                <mat-option value="Occupational Therapy">Occupational Therapy</mat-option>
+                <mat-option value="Physiotherapy">Physiotherapy</mat-option>
+                <mat-option value="Remedial education">Remedial education</mat-option>
+                <mat-option value="Speech Therapy">Speech Therapy</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+
+        <!-- Cost per Session -->
+        <mat-form-field appearance="fill">
+            <mat-label>Cost per Session</mat-label>
+            <input matInput formControlName="costPerSession" type="number">
+        </mat-form-field>
+
+        <!-- Number of Session -->
+        <mat-form-field appearance="fill">
+            <mat-label>Number of Session</mat-label>
+            <input matInput formControlName="noOfSession" type="number" max="10">
+        </mat-form-field>
+
+        <!-- Amount -->
+        <mat-form-field appearance="fill">
+            <mat-label>Amount</mat-label>
+            <input matInput formControlName="amount" [attr.disabled]="true">
+        </mat-form-field>
+    </form>
+</mat-dialog-content>
+<div class="button-container">
+    <mat-dialog-actions>
+        <button mat-raised-button color="warn" mat-dialog-close>Cancel</button>
+        <button mat-raised-button color="primary" [mat-dialog-close]="serviceForm.value">Add</button>
+    </mat-dialog-actions>
+</div>

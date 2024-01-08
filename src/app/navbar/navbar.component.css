@@ -1,0 +1,13 @@
+mat-toolbar {
+    /* background-color: #1976d2; */
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.logo {
+    height: 40px;
+    margin-right: 10px;
+}

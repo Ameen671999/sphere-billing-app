@@ -1,0 +1,56 @@
+
+<h2 mat-dialog-title>Enter Product Details</h2>
+<mat-dialog-content class="mat-typography">
+    <form [formGroup]="productForm">
+        <!-- Product Name -->
+        <mat-form-field>
+            <mat-label>Product Name</mat-label>
+            <mat-select matNativeControl formControlName="productName" required>
+                <mat-option value="Oticon">Oticon</mat-option>
+                <mat-option value="Phonak">Phonak</mat-option>
+                <mat-option value="Resound">Resound</mat-option>
+                <mat-option value="Signia">Signia</mat-option>
+                <mat-option value="Unitron">Unitron</mat-option>
+                <mat-option value="Widex">Widex</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <!-- Product type -->
+        <mat-form-field>
+            <mat-label>Product Type</mat-label>
+            <mat-select matNativeControl formControlName="productType" required>
+                <mat-option value="Receiver-In-Canal(RIC)">Receiver-In-Canal(RIC)</mat-option>
+                <mat-option value="In-The-Canal (ITC)">In-The-Canal (ITC)</mat-option>
+                <mat-option value="Completely-in-Canal(CIC)">Completely-in-Canal(CIC)</mat-option>
+                <mat-option value="Invisible-in-Canal">Invisible-in-Canal</mat-option>
+                <mat-option value="Behind-the-ear (BTE)">Behind-the-ear (BTE)</mat-option>
+                <mat-option value="In-The-Ear(ITE)">In-The-Ear(ITE)</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+
+        <!-- Product Price -->
+        <mat-form-field appearance="fill">
+            <mat-label>Product Price</mat-label>
+            <input matInput formControlName="productPrice" type="number">
+        </mat-form-field>
+
+        <!-- Quantity -->
+        <mat-form-field appearance="fill">
+            <mat-label>Quantity</mat-label>
+            <input matInput formControlName="quantity" type="number" max="10">
+        </mat-form-field>
+
+        <!-- Amount -->
+        <mat-form-field appearance="fill">
+            <mat-label>Amount</mat-label>
+            <input matInput formControlName="amount" [attr.disabled]="true">
+        </mat-form-field>
+    </form>
+</mat-dialog-content>
+<div class="button-container">
+    <mat-dialog-actions>
+        <button mat-raised-button color="warn" mat-dialog-close>Cancel</button>
+        <button mat-raised-button color="primary" [mat-dialog-close]="productForm.value">Add</button>
+    </mat-dialog-actions>
+</div>

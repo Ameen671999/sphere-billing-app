@@ -1,0 +1,62 @@
+<form [formGroup]="patientForm">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-6">
+                    <!-- Patient Name -->
+                    <mat-form-field appearance="fill">
+                        <mat-label>Patient Name</mat-label>
+                        <input matInput formControlName="patientName" required>
+                        <mat-error *ngIf="patientForm.get('patientName').invalid">
+                            Patient Name is required.
+                        </mat-error>
+                    </mat-form-field>
+
+                    <!-- Email -->
+                    <mat-form-field appearance="fill">
+                        <mat-label>Email</mat-label>
+                        <input matInput formControlName="email" required email>
+                        <mat-error *ngIf="patientForm.get('email').errors?.['required']">
+                            Email is required.
+                        </mat-error>
+                        <mat-error *ngIf="patientForm.get('email').errors?.['email']">
+                            Please enter a valid email.
+                        </mat-error>
+                    </mat-form-field>
+
+                    <!-- Phone Number -->
+                    <mat-form-field appearance="fill">
+                        <mat-label>Phone Number</mat-label>
+                        <input matInput formControlName="phoneNumber" required type="tel" pattern="[0-9]{10}">
+                        <mat-error *ngIf="patientForm.get('phoneNumber').invalid">
+                            Enter a valid phone number (10 digits).
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="col-md-6">
+                    <!-- Address -->
+                    <mat-form-field appearance="fill">
+                        <mat-label>Address</mat-label>
+                        <textarea matInput formControlName="address"></textarea>
+                    </mat-form-field>
+
+                    <!-- Patient Age -->
+                    <mat-form-field appearance="fill">
+                        <mat-label>Patient Age</mat-label>
+                        <input matInput formControlName="patientAge" required type="number" min="0" max="110">
+                        <mat-error *ngIf="patientForm.get('patientAge').errors?.['required']">
+                            Age is required.
+                        </mat-error>
+                        <mat-error *ngIf="patientForm.get('patientAge').errors?.['max']">
+                            Age must be less than 110.
+                        </mat-error>
+                    </mat-form-field>
+                    <div class="button-container">
+                        <button mat-raised-button color="accent" (click)="openAddProductDialog()">Add Product</button>
+                        <button mat-raised-button color="primary" (click)="openAddServiceDialog()">Add Service</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

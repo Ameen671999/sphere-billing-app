@@ -1,0 +1,44 @@
+/* .row.justify-content-center {
+    display: flex;
+    justify-content: center;
+} */
+
+.col-md-12 {
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    flex-direction: column;
+    
+}
+
+.mat-table {
+    width: 100%; /* Full width on small screens */
+    max-width: 1200px; /* Maximum width */
+  }
+
+@media (min-width: 568px) {
+    .mat-table {
+      width: 700px; /* Width for medium screens */
+    }
+  }
+  
+  @media (min-width: 992px) {
+    .mat-table {
+      width: 1200px; /* Width for large screens */
+    }
+  }
+
+  .total-card {
+    margin-top: 20px; /* Adds space between the table and the card */
+    width: 50%; /* Adjusts the width of the card */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* Adds a subtle shadow for depth */
+    border-radius: 10px; /* Rounds the corners of the card */
+    text-align: center;
+    font-weight: 500;
+  }
+
+  .total-value {
+    color: #28a745; /* Amazing green shade */
+    font-weight: bold; /* Bold text */
+    font-size: 1em; /* Slightly larger text */
+  }

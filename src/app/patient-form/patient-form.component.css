@@ -1,0 +1,35 @@
+mat-form-field {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  
+  input[matInput] {
+    padding: 10px;
+  }
+  
+  .error-message {
+    color: #f44336;
+    margin-left: 5px;
+    font-size: 0.8em;
+  }
+  
+  .row.justify-content-center {
+    display: flex;
+    justify-content: center;
+}
+
+.col-md-12 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 20px
+}
+.button-container {
+  display: flex;
+  justify-content: center;
+}
+
+button{
+  margin: 10px;
+}

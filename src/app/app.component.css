@@ -1,0 +1,19 @@
+.container {
+    max-width: 100vw; /* Viewport width */
+    overflow-x: hidden; /* Prevent horizontal scroll */
+    overflow-y: hidden; /* Prevent horizontal scroll */
+    box-sizing: border-box; /* Include padding and borders in the element's total width */
+  }
+
+  @media (max-width: 768px) {
+    .element {
+      padding: 0; /* Adjust padding and margins on smaller screens */
+    }
+  }
+
+.centered-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
