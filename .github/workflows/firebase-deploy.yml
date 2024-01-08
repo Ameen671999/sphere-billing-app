@@ -1,0 +1,31 @@
+name: Build and Deploy to Firebase
+
+on:
+  push:
+    branches:
+      - main  # Set to the branch name you want to build from
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Use Node.js
+      uses: actions/setup-node@v1
+      with:
+        node-version: '14'  # Set this to the node version you are using
+
+    - name: Install Dependencies
+      run: npm install
+
+    - name: Build Project
+      run: npm run build --prod
+
+    - name: Deploy to Firebase
+      uses: w9jds/firebase-action@master
+      with:
+        args: deploy --only hosting
+      env:
+        FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
